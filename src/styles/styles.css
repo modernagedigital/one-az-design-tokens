@@ -50,7 +50,7 @@
 /*********************/
 /* BRAND: forxiga */
 /*********************/
-[data-ui-theme^=forxiga] {
+[data-ui-theme^="forxiga"] {
   --color-brand-primary: #dc3918;
   --color-brand-secondary: #0077d6;
   --color-brand-supporting: #0077d6;
@@ -97,7 +97,7 @@
 /*********************/
 /* BRAND: symbicort */
 /*********************/
-[data-ui-theme^=symbicort] {
+[data-ui-theme^="symbicort"] {
   --color-brand-primary: #db383d;
   --color-brand-secondary: #003864;
   --color-brand-supporting: #fdbdbe;
@@ -144,7 +144,7 @@
 /*********************/
 /* BRAND: fasenra */
 /*********************/
-[data-ui-theme^=fasenra] {
+[data-ui-theme^="fasenra"] {
   --color-brand-primary: #c2298a;
   --color-brand-secondary: #0a8576;
   --color-brand-supporting: #efbfdd;
@@ -189,25 +189,33 @@
 }
 
 :root,
-[data-ui-colorway^=default] {
+[data-ui-colorway^="default"] {
   --colorway-background-main: var(--color-brand-neutral-200);
   --colorway-background-variant: var(--color-brand-neutral-300);
   --colorway-background-contrast: var(--color-brand-neutral-white);
   --colorway-text-heading: var(--color-brand-primary-main);
   --colorway-text-heading-contrast: var(--color-brand-primary-contrast);
   --colorway-text-heading-secondary: var(--color-brand-secondary);
-  --colorway-text-heading-secondary-contrast: var(--color-brand-secondary-contrast);
+  --colorway-text-heading-secondary-contrast: var(
+    --color-brand-secondary-contrast
+  );
   --colorway-text-heading-neutral: var(--color-brand-neutral-900);
   --colorway-text-body: var(--color-brand-neutral-800);
-  --colorway-interaction-primary-backing: var(--color-brand-interaction-primary-backing);
-  --colorway-interaction-primary-backing-hover: var(--color-brand-interaction-primary-backing-hover);
-  --colorway-interaction-primary-text: var(--color-brand-interaction-primary-text);
+  --colorway-interaction-primary-backing: var(
+    --color-brand-interaction-primary-backing
+  );
+  --colorway-interaction-primary-backing-hover: var(
+    --color-brand-interaction-primary-backing-hover
+  );
+  --colorway-interaction-primary-text: var(
+    --color-brand-interaction-primary-text
+  );
   --colorway-interaction-main: var(--color-brand-interaction-main);
   --colorway-interaction-variant: var(--color-brand-interaction-variant);
   --colorway-interaction-neutral: var(--color-brand-neutral-900);
 }
 
-[data-ui-colorway^=primary] {
+[data-ui-colorway^="primary"] {
   --colorway-background-main: var(--color-brand-primary-main);
   --colorway-background-variant: var(--color-brand-primary-main);
   --colorway-background-contrast: var(--color-brand-primary-contrast);
@@ -217,15 +225,19 @@
   --colorway-text-heading-secondary-contrast: var(--color-brand-primary-text);
   --colorway-text-heading-neutral: var(--color-brand-primary-text);
   --colorway-text-body: var(--color-brand-primary-text);
-  --colorway-interaction-primary-backing: var(--color-brand-interaction-variant);
-  --colorway-interaction-primary-backing-hover: var(--color-brand-interaction-variant);
+  --colorway-interaction-primary-backing: var(
+    --color-brand-interaction-variant
+  );
+  --colorway-interaction-primary-backing-hover: var(
+    --color-brand-interaction-variant
+  );
   --colorway-interaction-primary-text: var(--color-brand-interaction-main);
   --colorway-interaction-main: var(--color-brand-secondary-text);
   --colorway-interaction-variant: var(--color-brand-interaction-main);
   --colorway-interaction-neutral: var(--color-brand-neutral-white);
 }
 
-[data-ui-colorway^=secondary] {
+[data-ui-colorway^="secondary"] {
   --colorway-background-main: var(--color-brand-secondary-main);
   --colorway-background-variant: var(--color-brand-secondary-main);
   --colorway-background-contrast: var(--color-brand-secondary-contrast);
@@ -235,49 +247,69 @@
   --colorway-text-heading-secondary-contrast: var(--color-brand-secondary-text);
   --colorway-text-heading-neutral: var(--color-brand-secondary-text);
   --colorway-text-body: var(--color-brand-secondary-text);
-  --colorway-interaction-primary-backing: var(--color-brand-interaction-variant);
-  --colorway-interaction-primary-text: var(--color-brand-interaction-primary-text);
-  --colorway-interaction-primary-backing-hover: var(--color-brand-interaction-variant);
+  --colorway-interaction-primary-backing: var(
+    --color-brand-interaction-variant
+  );
+  --colorway-interaction-primary-text: var(
+    --color-brand-interaction-primary-text
+  );
+  --colorway-interaction-primary-backing-hover: var(
+    --color-brand-interaction-variant
+  );
   --colorway-interaction-main: var(--color-brand-interaction-main);
   --colorway-interaction-variant: var(--color-brand-interaction-main);
   --colorway-interaction-neutral: var(--color-brand-neutral-white);
 }
 
-[data-ui-colorway^=supporting] {
+[data-ui-colorway^="supporting"] {
   --colorway-background-main: var(--color-brand-supporting-main);
   --colorway-background-variant: var(--color-brand-supporting-main);
   --colorway-background-contrast: var(--color-brand-supporting-contrast);
   --colorway-text-heading: var(--color-brand-supporting-text);
   --colorway-text-heading-contrast: var(--color-brand-supporting-text);
   --colorway-text-heading-secondary: var(--color-brand-supporting-text);
-  --colorway-text-heading-secondary-contrast: var(--color-brand-supporting-text);
+  --colorway-text-heading-secondary-contrast: var(
+    --color-brand-supporting-text
+  );
   --colorway-text-heading-neutral: var(--color-brand-supporting-text);
   --colorway-text-body: var(--color-brand-supporting-text);
-  --colorway-interaction-primary-backing: var(--color-brand-interaction-primary-backing);
-  --colorway-interaction-primary-text: var(--color-brand-interaction-primary-text);
+  --colorway-interaction-primary-backing: var(
+    --color-brand-interaction-primary-backing
+  );
+  --colorway-interaction-primary-text: var(
+    --color-brand-interaction-primary-text
+  );
   --colorway-interaction-main: var(--color-brand-interaction-main);
   --colorway-interaction-variant: var(--color-brand-interaction-main);
   --colorway-interaction-neutral: var(--color-brand-neutral-white);
 }
 
-[data-ui-colorway^=supporting-variant] {
+[data-ui-colorway^="supporting-variant"] {
   --colorway-background-main: var(--color-brand-supporting-variant-main);
   --colorway-background-variant: var(--color-brand-supporting-variant-main);
-  --colorway-background-contrast: var(--color-brand-supporting-variant-contrast);
+  --colorway-background-contrast: var(
+    --color-brand-supporting-variant-contrast
+  );
   --colorway-text-heading: var(--color-brand-supporting-variant-text);
   --colorway-text-heading-contrast: var(--color-brand-supporting-variant-text);
   --colorway-text-heading-secondary: var(--color-brand-supporting-variant-text);
-  --colorway-text-heading-secondary-contrast: var(--color-brand-supporting-variant-text);
+  --colorway-text-heading-secondary-contrast: var(
+    --color-brand-supporting-variant-text
+  );
   --colorway-text-heading-neutral: var(--color-brand-supporting-variant-text);
   --colorway-text-body: var(--color-brand-supporting-variant-text);
-  --colorway-interaction-primary-backing: var(--color-brand-interaction-primary-backing);
-  --colorway-interaction-primary-text: var(--color-brand-interaction-primary-text);
+  --colorway-interaction-primary-backing: var(
+    --color-brand-interaction-primary-backing
+  );
+  --colorway-interaction-primary-text: var(
+    --color-brand-interaction-primary-text
+  );
   --colorway-interaction-main: var(--color-brand-neutral-white);
   --colorway-interaction-variant: var(--color-brand-interaction-main);
   --colorway-interaction-neutral: var(--color-brand-neutral-white);
 }
 
-[data-ui-colorway^=neutral] {
+[data-ui-colorway^="neutral"] {
   --colorway-background-main: var(--color-brand-neutral-800);
   --colorway-background-variant: var(--color-brand-neutral-800);
   --colorway-background-contrast: var(--color-brand-neutral-900);
@@ -287,8 +319,12 @@
   --colorway-text-heading-secondary-contrast: var(--color-brand-neutral-100);
   --colorway-text-heading-neutral: var(--color-brand-neutral-200);
   --colorway-text-body: var(--color-brand-neutral-white);
-  --colorway-interaction-primary-backing: var(--color-brand-interaction-primary-backing);
-  --colorway-interaction-primary-text: var(--color-brand-interaction-primary-text);
+  --colorway-interaction-primary-backing: var(
+    --color-brand-interaction-primary-backing
+  );
+  --colorway-interaction-primary-text: var(
+    --color-brand-interaction-primary-text
+  );
   --colorway-interaction-main: var(--color-brand-neutral-white);
   --colorway-interaction-variant: var(--color-brand-interaction-main);
   --colorway-interaction-neutral: var(--color-brand-neutral-white);
@@ -401,72 +437,6 @@
   --container-max: var(--size-screen--xl);
 }
 
-[class^=size-fluid-] {
-  aspect-ratio: 1/1;
-  background-color: green;
-  margin-bottom: var(--size-gap);
-}
-
-.size-fluid-sm {
-  width: var(--size-fluid--sm);
-}
-
-.size-fluid-md {
-  width: var(--size-fluid--md);
-}
-
-.size-fluid-lg {
-  width: var(--size-fluid--lg);
-}
-
-.size-fluid-xl {
-  width: var(--size-fluid--xl);
-}
-
-.size-fluid-2xl {
-  width: var(--size-fluid--2xl);
-}
-
-.size-fluid-3xl {
-  width: var(--size-fluid--3xl);
-}
-
-.size-fluid-sm-md {
-  width: var(--size-fluid--sm-md);
-}
-
-.size-fluid-md-lg {
-  width: var(--size-fluid--md-lg);
-}
-
-.size-fluid-lg-xl {
-  width: var(--size-fluid--lg-xl);
-}
-
-.size-fluid-xl-2xl {
-  width: var(--size-fluid--xl-2xl);
-}
-
-.size-fluid-2xl-3xl {
-  width: var(--size-fluid--2xl-3xl);
-}
-
-.size-fluid-lg {
-  width: var(--size-fluid--lg);
-}
-
-.size-fluid-xl {
-  width: var(--size-fluid--xl);
-}
-
-.size-fluid-2xl {
-  width: var(--size-fluid--2xl);
-}
-
-.size-fluid-3xl {
-  width: var(--size-fluid--3xl);
-}
-
 :root {
   --type-base: 1rem;
   --type-ratio: 1.11;
@@ -517,86 +487,6 @@
   --letter-spacing-normal: 0em;
   --letter-spacing-wide: 0.01em;
   --letter-spacing-wider: 0.05em;
-}
-
-.t_typography--hero {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tighter);
-}
-
-.t_typography--headline {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-snug);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.t_typography--title1 {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-snug);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.t_typography--title2 {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-snug);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.t_typography--title3 {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-snug);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.t_typography--heading {
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-snug);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.t_typography--subhead {
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-normal);
-}
-
-.t_typography--body {
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-normal);
-}
-
-.t_typography--footnote {
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-relaxed);
-  letter-spacing: var(--letter-spacing-wide);
-}
-
-.t_typography--micro {
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-relaxed);
-  letter-spacing: var(--letter-spacing-wider);
 }
 
 .t_font-family--display {
@@ -724,6 +614,86 @@
 }
 
 .t_letter-spacing--wider {
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.t_typography--hero {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tighter);
+}
+
+.t_typography--headline {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.t_typography--title1 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.t_typography--title2 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.t_typography--title3 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.t_typography--heading {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.t_typography--subhead {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.t_typography--body {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.t_typography--footnote {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.t_typography--micro {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
   letter-spacing: var(--letter-spacing-wider);
 }
 

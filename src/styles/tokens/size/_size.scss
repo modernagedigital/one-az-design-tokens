@@ -59,30 +59,14 @@
   }
 }
 
-[class^="size-fluid-"] {
-  aspect-ratio: 1/1;
-  background-color: green;
-  margin-bottom: var(--size-gap);
-}
+// [class^="size-fluid-"] {
+//   aspect-ratio: 1/1;
+//   background-color: green;
+//   margin-bottom: var(--size-gap);
+// }
 
-@each $key in map.keys(map.get(size.$fluid-scale, xs)) {
-  .size-fluid-#{$key} {
-    width: var(--size-fluid--#{$key});
-  }
-}
-
-.size-fluid-lg {
-  width: var(--size-fluid--lg);
-}
-
-.size-fluid-xl {
-  width: var(--size-fluid--xl);
-}
-
-.size-fluid-2xl {
-  width: var(--size-fluid--2xl);
-}
-
-.size-fluid-3xl {
-  width: var(--size-fluid--3xl);
-}
+// @each $key in map.keys(map.get(size.$fluid-scale, xs)) {
+//   .t_size-fluid--#{$key} {
+//     width: var(--size-fluid--#{$key});
+//   }
+// }

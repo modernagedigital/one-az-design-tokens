@@ -34,19 +34,3 @@
     }
   }
 }
-
-// Create the class names for each typography style
-@each $key, $value in type.$type-presets {
-  .t_typography--#{$key} {
-    @include type.typography($key);
-  }
-}
-
-// loop through the type-tokens and create css classes
-@each $key, $value in type.$type-tokens {
-  @each $subkey, $subvalue in $value {
-    .t_#{$key}--#{$subkey} {
-      #{$key}: var(--#{$key}-#{$subkey});
-    }
-  }
-}
