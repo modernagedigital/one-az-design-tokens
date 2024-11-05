@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "sass:math";
+@use "base_breakpoints.scss";
+
+$rem-base: 16;
+$fixed-inc: 4;
+
+$fixed-values: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 22 24 28 30 32
+  34 36 38 40 44 48 52 56 60 64 72 80 96;
+
+$fluid-scale: (
+  xs: (
+    sm: 12,
+    md: 16,
+    lg: 24,
+    xl: 32,
+    2xl: 48,
+    3xl: 64,
+    sm-md: 12,
+    md-lg: 16,
+    lg-xl: 24,
+    xl-2xl: 32,
+    "2xl-3xl": 48,
+  ),
+  md: (
+    sm: 14,
+    md: 20,
+    lg: 28,
+    xl: 36,
+    2xl: 56,
+    3xl: 72,
+    sm-md: 18,
+    md-lg: 24,
+    lg-xl: 32,
+    xl-2xl: 48,
+    "2xl-3xl": 64,
+  ),
+  xl: (
+    sm: 16,
+    md: 24,
+    lg: 32,
+    xl: 48,
+    2xl: 64,
+    3xl: 80,
+    sm-md: 24,
+    md-lg: 32,
+    lg-xl: 48,
+    xl-2xl: 64,
+    "2xl-3xl": 80,
+  ),
+);
+
+@function fluid-scale($breakpoint, $size) {
+  $map: map.get($fluid-scale, $breakpoint);
+  @return math.div(map.get($map, $size), 16) + rem;
+}
+
+@mixin space-y($var) {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-top: #{$var};
+  }
+}

@@ -1,28 +1,4 @@
-@use "../base/breakpoints.scss";
-
-/* *******************/
-/* Typographic Scale */
-/* *******************/
-:root {
-  --type-base: 1rem;
-  --type-ratio: 1.11;
-}
-
-// MD
-@media (min-width: breakpoint(sm)) {
-  :root {
-    --type-ratio: 1.15;
-    --fluid-scale-location: 0.5;
-  }
-}
-
-// XL
-@media (min-width: breakpoint(xl)) {
-  :root {
-    --type-ratio: 1.18;
-    --fluid-scale-location: 1;
-  }
-}
+@use "sass:map";
 
 $type-tokens: (
   font-family: (
@@ -69,8 +45,7 @@ $type-tokens: (
   ),
 );
 
-// sass map for typography
-$typography: (
+$type-presets: (
   hero: (
     font-family: #{var(--font-family-display)},
     font-size: #{var(--font-size-6xl)},
@@ -143,34 +118,9 @@ $typography: (
   ),
 );
 
-:root {
-  // loop through type-tokens and create css variables
-  @each $key, $value in $type-tokens {
-    @each $subkey, $subvalue in $value {
-      --#{$key}-#{$subkey}: #{$subvalue};
-    }
-  }
-}
-
 // A reusable mixin to apply typography styles
 @mixin typography($name) {
-  @each $key, $value in map-get($typography, $name) {
+  @each $key, $value in map.get($type-presets, $name) {
     #{$key}: $value;
-  }
-}
-
-// Create the class names for each typography style
-@each $key, $value in $typography {
-  .t_typography--#{$key} {
-    @include typography($key);
-  }
-}
-
-// loop through the type-tokens and create css classes
-@each $key, $value in $type-tokens {
-  @each $subkey, $subvalue in $value {
-    .t_#{$key}--#{$subkey} {
-      #{$key}: var(--#{$key}-#{$subkey});
-    }
   }
 }

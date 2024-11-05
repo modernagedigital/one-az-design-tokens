@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "../base/_base_breakpoints.scss" as bp;
+@use "../base/_base_typography.scss" as type;
+
+// /* *******************/
+// /* Typographic Scale */
+// /* *******************/
+:root {
+  --type-base: 1rem;
+  --type-ratio: 1.11;
+}
+
+// MD
+@media (min-width: bp.breakpoint(sm)) {
+  :root {
+    --type-ratio: 1.15;
+    --fluid-scale-location: 0.5;
+  }
+}
+
+// XL
+@media (min-width: bp.breakpoint(xl)) {
+  :root {
+    --type-ratio: 1.18;
+    --fluid-scale-location: 1;
+  }
+}
+
+:root {
+  // loop through type-tokens and create css variables
+  @each $key, $value in type.$type-tokens {
+    @each $subkey, $subvalue in $value {
+      --#{$key}-#{$subkey}: #{$subvalue};
+    }
+  }
+}
+
+// Create the class names for each typography style
+@each $key, $value in type.$type-presets {
+  .t_typography--#{$key} {
+    @include type.typography($key);
+  }
+}
+
+// loop through the type-tokens and create css classes
+@each $key, $value in type.$type-tokens {
+  @each $subkey, $subvalue in $value {
+    .t_#{$key}--#{$subkey} {
+      #{$key}: var(--#{$key}-#{$subkey});
+    }
+  }
+}

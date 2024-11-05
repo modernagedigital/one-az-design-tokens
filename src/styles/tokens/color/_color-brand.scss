@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "../base/base_color-brands" as colorBrands;
+
+@each $brand, $brand-colors in colorBrands.$color-brands {
+  /*********************/
+  /* BRAND: #{$brand} */
+  /*********************/
+  @if $brand == "astrazeneca" {
+    :root {
+      //*******************/
+      /*  Core colors */
+      //*******************/
+      @each $color-type, $color in map.get($brand-colors, "core") {
+        --color-brand-#{$color-type}: #{$color};
+      }
+
+      //*******************/
+      /*  EXTENDED colors */
+      //*******************/
+      @each $color-type, $color in map.get($brand-colors, "extended") {
+        /* #{$color-type} */
+        @each $color-type-extended, $color-extended in $color {
+          --color-brand-#{$color-type}-#{$color-type-extended}: #{$color-extended};
+        }
+      }
+    }
+  } @else {
+    [data-ui-theme^="#{$brand}"] {
+      @each $color-type, $color in map.get($brand-colors, "core") {
+        --color-brand-#{$color-type}: #{$color};
+      }
+      //*******************/
+      //  EXTENDED colors
+      //*******************/
+      @each $color-type, $color in map.get($brand-colors, "extended") {
+        /* #{$color-type} */
+        @each $color-type-extended, $color-extended in $color {
+          --color-brand-#{$color-type}-#{$color-type-extended}: #{$color-extended};
+        }
+      }
+    }
+  }
+}

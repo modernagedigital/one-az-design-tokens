@@ -17,7 +17,8 @@
     "typescript": "4.4.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "sass": "sass --watch src/styles/styles.scss:src/styles/styles.css",
+    "start": "react-scripts start && npm run sass",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

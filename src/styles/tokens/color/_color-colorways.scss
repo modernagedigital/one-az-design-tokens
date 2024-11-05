@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "../base/base_colorways" as colorways;
+
+// write a mixin that gets the colorway and sets the variables for each top level map key
+@mixin colorway($colorway) {
+  @each $key, $value in map.get(colorways.$colorways, $colorway) {
+    @each $subkey, $subvalue in $value {
+      --colorway-#{$key}-#{$subkey}: #{$subvalue};
+    }
+  }
+}
+
+:root,
+[data-ui-colorway^="default"] {
+  @include colorway(default);
+}
+
+[data-ui-colorway^="primary"] {
+  @include colorway(primary);
+}
+
+[data-ui-colorway^="secondary"] {
+  @include colorway(secondary);
+}
+
+[data-ui-colorway^="supporting"] {
+  @include colorway(supporting);
+}
+
+[data-ui-colorway^="supporting-variant"] {
+  @include colorway(supporting-variant);
+}
+
+[data-ui-colorway^="neutral"] {
+  @include colorway(neutral);
+}

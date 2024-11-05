@@ -1,15 +1,15 @@
 // Base
-@import "base/breakpoints.scss";
-@import "base/elevation.scss";
+// @use "base/breakpoints.scss";
+// @import "base/elevation.scss";
 
-// Tokens: Color
-@import "color/color-1-scales.scss";
-@import "color/color-2-brand.scss";
-@import "color/color-3-colorways.scss";
+// // Tokens: Color
+// @import "color/color-1-scales.scss";
+@use "color/color-brand.scss";
+@use "color/color-colorways.scss";
 
-// Tokens: Size
-@import "size/size-1-base.scss";
-@import "size/size-2-main.scss";
+// // Tokens: Size
+// @import "size/size-1-base.scss";
+@use "size/size.scss";
 
-// Tokens: Typography
-@import "typography/typography.scss";
+// // Tokens: Typography
+@use "typography/typography.scss";

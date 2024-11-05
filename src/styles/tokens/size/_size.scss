@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "sass:math";
+@use "../base/_base_breakpoints.scss" as bp;
+@use "../base/base-size.scss" as size;
+
+:root {
+  --rem-base: 16;
+  --fixed-inc: 4;
+  --rem-base-calc: var(--rem-base) * 1rem;
+
+  // Fixed Size variables
+  @each $value in size.$fixed-values {
+    --size-fixed--#{$value}: #{math.div(
+        size.$fixed-inc * $value,
+        size.$rem-base
+      ) *
+      1rem};
+  }
+
+  // Fluid Size variables
+  @each $breakpoint, $map in size.$fluid-scale {
+    @if $breakpoint == xs {
+      @each $size, $value in $map {
+        --size-fluid--#{$size}: #{size.fluid-scale($breakpoint, $size)};
+      }
+    } @else {
+      @media (min-width: bp.breakpoint($breakpoint)) {
+        @each $size, $value in $map {
+          --size-fluid--#{$size}: #{size.fluid-scale($breakpoint, $size)};
+        }
+      }
+    }
+  }
+
+  & {
+    --size-screen--xs: #{bp.breakpoint(xs)};
+    --size-screen--sm: #{bp.breakpoint(sm)};
+    --size-screen--md: #{bp.breakpoint(md)};
+    --size-screen--lg: #{bp.breakpoint(lg)};
+    --size-screen--xl: #{bp.breakpoint(xl)};
+    --size-screen--2xl: #{bp.breakpoint(2xl)};
+
+    --size-pad-x: var(--size-fluid--lg-xl);
+    --size-pad-y: var(--size-fluid--xl);
+    --size-gap: var(--size-fluid--xl);
+    --size-touch-target: var(--size-fixed--10);
+
+    --border-radius--sm: 0.125rem;
+    --border-radius--base: var(--size-fixed--1);
+    --border-radius--md: 0.37rem;
+    --border-radius--lg: var(--size-fixed--2);
+    --border-radius--xl: var(--size-fixed--3);
+    --border-radius--2xl: var(--size-fixed--4);
+    --border-radius--3xl: var(--size-fixed--6);
+    --border-radius--3xl: var(--size-fixed--6);
+    --border-radius--full: 9999rem;
+
+    --container-max: var(--size-screen--xl);
+  }
+}
+
+[class^="size-fluid-"] {
+  aspect-ratio: 1/1;
+  background-color: green;
+  margin-bottom: var(--size-gap);
+}
+
+@each $key in map.keys(map.get(size.$fluid-scale, xs)) {
+  .size-fluid-#{$key} {
+    width: var(--size-fluid--#{$key});
+  }
+}
+
+.size-fluid-lg {
+  width: var(--size-fluid--lg);
+}
+
+.size-fluid-xl {
+  width: var(--size-fluid--xl);
+}
+
+.size-fluid-2xl {
+  width: var(--size-fluid--2xl);
+}
+
+.size-fluid-3xl {
+  width: var(--size-fluid--3xl);
+}
