@@ -1,0 +1,172 @@
+$colorways: (
+  default: (
+    background: (
+      main: var(--color-brand-neutral-200),
+      variant: var(--color-brand-neutral-300),
+      contrast: var(--color-brand-neutral-white),
+    ),
+    text: (
+      heading: var(--color-brand-primary-main),
+      heading-contrast: var(--color-brand-primary-contrast),
+      heading-secondary: var(--color-brand-secondary),
+      heading-secondary-contrast: var(--color-brand-secondary-contrast),
+      heading-neutral: var(--color-brand-neutral-900),
+      body: var(--color-brand-neutral-800),
+    ),
+    interaction: (
+      primary-backing: var(--color-brand-interaction-primary-backing),
+      primary-backing-hover:
+        var(--color-brand-interaction-primary-backing-hover),
+      primary-text: var(--color-brand-interaction-primary-text),
+      main: var(--color-brand-interaction-main),
+      variant: var(--color-brand-interaction-variant),
+      neutral: var(--color-brand-neutral-900),
+    ),
+  ),
+  primary: (
+    background: (
+      main: var(--color-brand-primary-main),
+      variant: var(--color-brand-primary-main),
+      contrast: var(--color-brand-primary-contrast),
+    ),
+    text: (
+      heading: var(--color-brand-primary-text),
+      heading-contrast: var(--color-brand-primary-text),
+      heading-secondary: var(--color-brand-primary-text),
+      heading-secondary-contrast: var(--color-brand-primary-text),
+      heading-neutral: var(--color-brand-primary-text),
+      body: var(--color-brand-primary-text),
+    ),
+    interaction: (
+      primary-backing: var(--color-brand-interaction-variant),
+      primary-backing-hover: var(--color-brand-interaction-variant),
+      primary-text: var(--color-brand-interaction-main),
+      main: var(--color-brand-secondary-text),
+      variant: var(--color-brand-interaction-main),
+      neutral: var(--color-brand-neutral-white),
+    ),
+  ),
+  secondary: (
+    background: (
+      main: var(--color-brand-secondary-main),
+      variant: var(--color-brand-secondary-main),
+      contrast: var(--color-brand-secondary-contrast),
+    ),
+    text: (
+      heading: var(--color-brand-secondary-text),
+      heading-contrast: var(--color-brand-secondary-text),
+      heading-secondary: var(--color-brand-secondary-text),
+      heading-secondary-contrast: var(--color-brand-secondary-text),
+      heading-neutral: var(--color-brand-secondary-text),
+      body: var(--color-brand-secondary-text),
+    ),
+    interaction: (
+      primary-backing: var(--color-brand-interaction-variant),
+      primary-text: var(--color-brand-interaction-primary-text),
+      primary-backing-hover: var(--color-brand-interaction-variant),
+      main: var(--color-brand-interaction-main),
+      variant: var(--color-brand-interaction-main),
+      neutral: var(--color-brand-neutral-white),
+    ),
+  ),
+  supporting: (
+    background: (
+      main: var(--color-brand-supporting-main),
+      variant: var(--color-brand-supporting-main),
+      contrast: var(--color-brand-supporting-contrast),
+    ),
+    text: (
+      heading: var(--color-brand-supporting-text),
+      heading-contrast: var(--color-brand-supporting-text),
+      heading-secondary: var(--color-brand-supporting-text),
+      heading-secondary-contrast: var(--color-brand-supporting-text),
+      heading-neutral: var(--color-brand-supporting-text),
+      body: var(--color-brand-supporting-text),
+    ),
+    interaction: (
+      primary-backing: var(--color-brand-interaction-primary-backing),
+      primary-text: var(--color-brand-interaction-primary-text),
+      main: var(--color-brand-interaction-main),
+      variant: var(--color-brand-interaction-main),
+      neutral: var(--color-brand-neutral-white),
+    ),
+  ),
+  "supporting-variant": (
+    background: (
+      main: var(--color-brand-supporting-variant-main),
+      variant: var(--color-brand-supporting-variant-main),
+      contrast: var(--color-brand-supporting-variant-contrast),
+    ),
+    text: (
+      heading: var(--color-brand-supporting-variant-text),
+      heading-contrast: var(--color-brand-supporting-variant-text),
+      heading-secondary: var(--color-brand-supporting-variant-text),
+      heading-secondary-contrast: var(--color-brand-supporting-variant-text),
+      heading-neutral: var(--color-brand-supporting-variant-text),
+      body: var(--color-brand-supporting-variant-text),
+    ),
+    interaction: (
+      primary-backing: var(--color-brand-interaction-primary-backing),
+      primary-text: var(--color-brand-interaction-primary-text),
+      main: var(--color-brand-neutral-white),
+      variant: var(--color-brand-interaction-main),
+      neutral: var(--color-brand-neutral-white),
+    ),
+  ),
+  neutral: (
+    background: (
+      main: var(--color-brand-neutral-800),
+      variant: var(--color-brand-neutral-800),
+      contrast: var(--color-brand-neutral-900),
+    ),
+    text: (
+      heading: var(--color-brand-neutral-white),
+      heading-contrast: var(--color-brand-neutral-white),
+      heading-secondary: var(--color-brand-neutral-100),
+      heading-secondary-contrast: var(--color-brand-neutral-100),
+      heading-neutral: var(--color-brand-neutral-200),
+      body: var(--color-brand-neutral-white),
+    ),
+    interaction: (
+      primary-backing: var(--color-brand-interaction-primary-backing),
+      primary-text: var(--color-brand-interaction-primary-text),
+      main: var(--color-brand-neutral-white),
+      variant: var(--color-brand-interaction-main),
+      neutral: var(--color-brand-neutral-white),
+    ),
+  ),
+);
+
+// write a mixin that gets the colorway and sets the variables for each top level map key
+@mixin colorway($colorway) {
+  @each $key, $value in map-get($colorways, $colorway) {
+    @each $subkey, $subvalue in $value {
+      --colorway-#{$key}-#{$subkey}: #{$subvalue};
+    }
+  }
+}
+
+:root,
+[data-ui-colorway^="default"] {
+  @include colorway(default);
+}
+
+[data-ui-colorway^="primary"] {
+  @include colorway(primary);
+}
+
+[data-ui-colorway^="secondary"] {
+  @include colorway(secondary);
+}
+
+[data-ui-colorway^="supporting"] {
+  @include colorway(supporting);
+}
+
+[data-ui-colorway^="supporting-variant"] {
+  @include colorway(supporting-variant);
+}
+
+[data-ui-colorway^="neutral"] {
+  @include colorway(neutral);
+}

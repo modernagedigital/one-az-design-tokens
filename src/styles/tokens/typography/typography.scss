@@ -1,0 +1,176 @@
+@use "../base/breakpoints.scss";
+
+/* *******************/
+/* Typographic Scale */
+/* *******************/
+:root {
+  --type-base: 1rem;
+  --type-ratio: 1.11;
+}
+
+// MD
+@media (min-width: breakpoint(sm)) {
+  :root {
+    --type-ratio: 1.15;
+    --fluid-scale-location: 0.5;
+  }
+}
+
+// XL
+@media (min-width: breakpoint(xl)) {
+  :root {
+    --type-ratio: 1.18;
+    --fluid-scale-location: 1;
+  }
+}
+
+$type-tokens: (
+  font-family: (
+    display: "lexia-variable",
+    text: "Inter",
+  ),
+  font-weight: (
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+  ),
+  font-size: (
+    xs: 0.75rem,
+    sm: 0.875rem,
+    base: var(--type-base),
+    lg: calc(var(--type-base) * var(--type-ratio)),
+    xl: calc(var(--font-size-lg) * var(--type-ratio)),
+    2xl: calc(var(--font-size-xl) * var(--type-ratio)),
+    3xl: calc(var(--font-size-2xl) * var(--type-ratio)),
+    4xl: calc(var(--font-size-3xl) * var(--type-ratio)),
+    5xl: calc(var(--font-size-4xl) * var(--type-ratio)),
+    6xl: calc(var(--font-size-5xl) * var(--type-ratio)),
+    7xl: calc(var(--font-size-6xl) * var(--type-ratio)),
+    8xl: calc(var(--font-size-7xl) * var(--type-ratio)),
+    9xl: calc(var(--font-size-8xl) * var(--type-ratio)),
+  ),
+  line-height: (
+    none: 1,
+    tighter: 1.1,
+    tight: 1.25,
+    snug: 1.375,
+    normal: 1.5,
+    relaxed: 1.625,
+    loose: 2,
+  ),
+  letter-spacing: (
+    tighter: -0.025em,
+    tight: -0.01em,
+    normal: 0em,
+    wide: 0.01em,
+    wider: 0.05em,
+  ),
+);
+
+// sass map for typography
+$typography: (
+  hero: (
+    font-family: #{var(--font-family-display)},
+    font-size: #{var(--font-size-6xl)},
+    font-weight: #{var(--font-weight-normal)},
+    line-height: #{var(--line-height-tight)},
+    letter-spacing: #{var(--letter-spacing-tighter)},
+  ),
+  headline: (
+    font-family: #{var(--font-family-display)},
+    font-size: #{var(--font-size-5xl)},
+    font-weight: #{var(--font-weight-normal)},
+    line-height: #{var(--line-height-snug)},
+    letter-spacing: #{var(--letter-spacing-tight)},
+  ),
+  title1: (
+    font-family: #{var(--font-family-display)},
+    font-size: #{var(--font-size-4xl)},
+    font-weight: #{var(--font-weight-normal)},
+    line-height: #{var(--line-height-snug)},
+    letter-spacing: #{var(--letter-spacing-tight)},
+  ),
+  title2: (
+    font-family: #{var(--font-family-display)},
+    font-size: #{var(--font-size-3xl)},
+    font-weight: #{var(--font-weight-medium)},
+    line-height: #{var(--line-height-snug)},
+    letter-spacing: #{var(--letter-spacing-tight)},
+  ),
+  title3: (
+    font-family: #{var(--font-family-display)},
+    font-size: #{var(--font-size-2xl)},
+    font-weight: #{var(--font-weight-medium)},
+    line-height: #{var(--line-height-snug)},
+    letter-spacing: #{var(--letter-spacing-tight)},
+  ),
+  heading: (
+    font-family: #{var(--font-family-text)},
+    font-size: #{var(--font-size-xl)},
+    font-weight: #{var(--font-weight-bold)},
+    line-height: #{var(--line-height-snug)},
+    letter-spacing: #{var(--letter-spacing-tight)},
+  ),
+  subhead: (
+    font-family: #{var(--font-family-text)},
+    font-size: #{var(--font-size-lg)},
+    font-weight: #{var(--font-weight-bold)},
+    line-height: #{var(--line-height-normal)},
+    letter-spacing: #{var(--letter-spacing-normal)},
+  ),
+  body: (
+    font-family: #{var(--font-family-text)},
+    font-size: #{var(--font-size-base)},
+    font-weight: #{var(--font-weight-normal)},
+    line-height: #{var(--line-height-normal)},
+    letter-spacing: #{var(--letter-spacing-normal)},
+  ),
+  footnote: (
+    font-family: #{var(--font-family-text)},
+    font-size: #{var(--font-size-sm)},
+    font-weight: #{var(--font-weight-normal)},
+    line-height: #{var(--line-height-relaxed)},
+    letter-spacing: #{var(--letter-spacing-wide)},
+  ),
+  micro: (
+    font-family: #{var(--font-family-text)},
+    font-size: #{var(--font-size-xs)},
+    font-weight: #{var(--font-weight-normal)},
+    line-height: #{var(--line-height-relaxed)},
+    letter-spacing: #{var(--letter-spacing-wider)},
+  ),
+);
+
+:root {
+  // loop through type-tokens and create css variables
+  @each $key, $value in $type-tokens {
+    @each $subkey, $subvalue in $value {
+      --#{$key}-#{$subkey}: #{$subvalue};
+    }
+  }
+}
+
+// A reusable mixin to apply typography styles
+@mixin typography($name) {
+  @each $key, $value in map-get($typography, $name) {
+    #{$key}: $value;
+  }
+}
+
+// Create the class names for each typography style
+@each $key, $value in $typography {
+  .t_typography--#{$key} {
+    @include typography($key);
+  }
+}
+
+// loop through the type-tokens and create css classes
+@each $key, $value in $type-tokens {
+  @each $subkey, $subvalue in $value {
+    .t_#{$key}--#{$subkey} {
+      #{$key}: var(--#{$key}-#{$subkey});
+    }
+  }
+}

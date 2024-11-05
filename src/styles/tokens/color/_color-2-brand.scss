@@ -1,0 +1,261 @@
+/*****************************/
+/******     BRAND       ******/
+/*****************************/
+
+$color-brands: (
+  "astrazeneca": (
+    "core": (
+      "primary": color("mulberry", 12),
+      "secondary": color("magenta", 11),
+      "supporting": color("mulberry", 13),
+      "supporting-variant": color("blue", 12),
+      "accent": color("gold", 9),
+    ),
+    "extended": (
+      "primary": (
+        "main": color("mulberry", 12),
+        "contrast": color("mulberry", 12),
+        "text": color("white", 1),
+      ),
+      "secondary": (
+        "main": color("magenta", 11),
+        "contrast": color("magenta", 11),
+        "text": color("white", 1),
+      ),
+      "supporting": (
+        "main": color("mulberry", 13),
+        "contrast": color("mulberry", 13),
+        "text": color("white", 1),
+      ),
+      "supporting-variant": (
+        "main": color("blue", 12),
+        "contrast": color("blue", 12),
+        "text": color("white", 1),
+      ),
+      "interaction": (
+        "primary-backing": color("magenta", 11),
+        "primary-backing-hover": color("magenta", 10),
+        "primary-text": color("white", 1),
+        "main": color("magenta", 11),
+        "variant": color("white", 1),
+        "highlight": color("magenta", 10),
+        "contrast": color("magenta", 12),
+      ),
+      "neutral": (
+        "white": color("white", 1),
+        "100": color("graphite", 1),
+        "200": color("platinum", 2),
+        "300": color("platinum", 3),
+        "400": color("graphite", 6),
+        "500": color("graphite", 7),
+        "600": color("graphite", 8),
+        "700": color("graphite", 10),
+        "800": color("graphite", 11),
+        "900": color("graphite", 12),
+        "black": color("black", 1),
+      ),
+    ),
+  ),
+  "forxiga": (
+    "core": (
+      "primary": color("tomato", 10),
+      "secondary": color("blue", 10),
+      "supporting": color("blue", 10),
+      "supporting-variant": color("lime", 7),
+      "accent": color("lime", 7),
+    ),
+    "extended": (
+      "primary": (
+        "main": color("tomato", 10),
+        "contrast": color("tomato", 12),
+        "text": color("white", 1),
+      ),
+      "secondary": (
+        "main": color("blue", 10),
+        "contrast": color("blue", 12),
+        "text": color("white", 1),
+      ),
+      "supporting": (
+        "main": color("blue", 10),
+        "contrast": color("blue", 12),
+        "text": color("white", 1),
+      ),
+      "supporting-variant": (
+        "main": color("lime", 7),
+        "contrast": color("lime", 7),
+        "text": color("gray", 12),
+      ),
+      "interaction": (
+        "primary-backing": color("tomato", 11),
+        "primary-backing-hover": color("tomato", 9),
+        "primary-text": color("white", 1),
+        "main": color("tomato", 11),
+        "variant": color("white", 1),
+        "highlight": color("tomato", 9),
+        "contrast": color("tomato", 11),
+      ),
+      "neutral": (
+        "white": color("white", 1),
+        "100": color("gray", 1),
+        "200": color("gray", 2),
+        "300": color("gray", 3),
+        "400": color("gray", 6),
+        "500": color("gray", 7),
+        "600": color("gray", 8),
+        "700": color("gray", 10),
+        "800": color("gray", 11),
+        "900": color("gray", 12),
+        "black": color("black", 1),
+      ),
+    ),
+  ),
+  "symbicort": (
+    "core": (
+      "primary": color("red", 10),
+      "secondary": color("blue", 12),
+      "supporting": color("red", 6),
+      "supporting-variant": color("blue", 6),
+      "accent": color("red", 10),
+    ),
+    "extended": (
+      "primary": (
+        "main": color("red", 10),
+        "contrast": color("red", 11),
+        "text": color("white", 1),
+      ),
+      "secondary": (
+        "main": color("blue", 12),
+        "contrast": color("blue", 12),
+        "text": color("white", 1),
+      ),
+      "supporting": (
+        "main": color("red", 6),
+        "contrast": color("red", 6),
+        "text": color("red", 12),
+      ),
+      "supporting-variant": (
+        "main": color("blue", 6),
+        "contrast": color("blue", 6),
+        "text": color("blue", 12),
+      ),
+      "interaction": (
+        "primary-backing": color("red", 11),
+        "primary-backing-hover": color("red", 9),
+        "primary-text": color("white", 1),
+        "main": color("red", 11),
+        "variant": color("white", 1),
+        "highlight": color("red", 9),
+        "contrast": color("red", 12),
+      ),
+      "neutral": (
+        "white": color("white", 1),
+        "100": color("olive", 1),
+        "200": color("olive", 2),
+        "300": color("olive", 3),
+        "400": color("gray", 6),
+        "500": color("gray", 7),
+        "600": color("gray", 8),
+        "700": color("gray", 10),
+        "800": color("gray", 11),
+        "900": color("gray", 12),
+        "black": color("black", 1),
+      ),
+    ),
+  ),
+  "fasenra": (
+    "core": (
+      "primary": color("pink", 11),
+      "secondary": color("teal", 10),
+      "supporting": color("pink", 6),
+      "supporting-variant": color("teal", 5),
+      "accent": color("teal", 10),
+    ),
+    "extended": (
+      "primary": (
+        "main": color("pink", 11),
+        "contrast": color("pink", 11),
+        "text": color("white", 1),
+      ),
+      "secondary": (
+        "main": color("teal", 10),
+        "contrast": color("teal", 11),
+        "text": color("white", 1),
+      ),
+      "supporting": (
+        "main": color("pink", 6),
+        "contrast": color("pink", 6),
+        "text": color("pink", 12),
+      ),
+      "supporting-variant": (
+        "main": color("teal", 5),
+        "contrast": color("teal", 6),
+        "text": color("teal", 12),
+      ),
+      "interaction": (
+        "primary-backing": color("teal", 11),
+        "primary-backing-hover": color("teal", 9),
+        "primary-text": color("white", 1),
+        "main": color("teal", 11),
+        "variant": color("white", 1),
+        "highlight": color("teal", 9),
+        "contrast": color("teal", 12),
+      ),
+      "neutral": (
+        "white": color("white", 1),
+        "100": color("olive", 1),
+        "200": color("olive", 2),
+        "300": color("olive", 3),
+        "400": color("gray", 6),
+        "500": color("gray", 7),
+        "600": color("gray", 8),
+        "700": color("gray", 10),
+        "800": color("gray", 11),
+        "900": color("gray", 12),
+        "black": color("black", 1),
+      ),
+    ),
+  ),
+);
+
+@each $brand, $brand-colors in $color-brands {
+  /*********************/
+  /*********************/
+  /* BRAND: #{$brand} */
+  /*********************/
+  /*********************/
+  @if $brand == "astrazeneca" {
+    :root {
+      /*******************/
+      /* CORE colors */
+      /*******************/
+      @each $color-type, $color in map-get($brand-colors, "core") {
+        --color-brand-#{$color-type}: #{$color};
+      }
+
+      /*******************/
+      /* EXTENDED colors */
+      /*******************/
+      @each $color-type, $color in map-get($brand-colors, "extended") {
+        /* #{$color-type} */
+        @each $color-type-extended, $color-extended in $color {
+          --color-brand-#{$color-type}-#{$color-type-extended}: #{$color-extended};
+        }
+      }
+    }
+  } @else {
+    [data-ui-theme^="#{$brand}"] {
+      @each $color-type, $color in map-get($brand-colors, "core") {
+        --color-brand-#{$color-type}: #{$color};
+      }
+      /*******************/
+      /* EXTENDED colors */
+      /*******************/
+      @each $color-type, $color in map-get($brand-colors, "extended") {
+        /* #{$color-type} */
+        @each $color-type-extended, $color-extended in $color {
+          --color-brand-#{$color-type}-#{$color-type-extended}: #{$color-extended};
+        }
+      }
+    }
+  }
+}
